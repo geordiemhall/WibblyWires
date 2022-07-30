@@ -1,0 +1,44 @@
+# Binaries
+/Binaries
+*.pdb
+*.dll
+
+# Plugin Intermediate and Binaries
+/Plugins/*/Intermediate
+/Plugins/*/Binaries
+
+# Builds
+Build/*
+
+# Whitelist PakBlacklist-<BuildConfiguration>.txt files
+!Build/*/
+Build/*/**
+!Build/*/PakBlacklist*.txt
+
+# Don't ignore icon files in Build
+!Build/**/*.ico
+
+# Generated project files
+/DerivedDataCache
+/Intermediate
+/Saved
+*.sdf
+*.sln
+*.v12.suo
+*.opensdf
+*.xcodeproj
+*.xcworkspace/
+*.VC.opendb
+.vscode/
+.vs/
+
+# Temporary VS files
+*.TMP
+
+# OS generated files
+Thumbs.db
+*.db
+.DS_Store
+
+# Merge files
+*.orig
