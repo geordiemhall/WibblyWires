@@ -1,4 +1,4 @@
-// Copyright 2021 Geordie Hall. All rights reserved.
+// Copyright 2022 Geordie Hall. All rights reserved.
 
 
 #include "WibblyConnectionDrawingPolicy.h"

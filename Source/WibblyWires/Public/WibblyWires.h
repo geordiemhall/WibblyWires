@@ -1,9 +1,8 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright 2022 Geordie Hall. All rights reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Modules/ModuleManager.h"
 
 class FWibblyWiresModule : public IModuleInterface
 {
