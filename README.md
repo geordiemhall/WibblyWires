@@ -7,3 +7,5 @@ Very serious plugin that should only be used for serious purposes.
 https://twitter.com/geordiemhall/status/1551105117247913985
 
 (Note that this whole thing is very hacked together, and doesn't include the 'cutting' feature in the GIF since that needed engine changes)
+
+Released as MIT, though would appreciate it not being put on the marketplace, since I've thought about doing it myself eventually.
