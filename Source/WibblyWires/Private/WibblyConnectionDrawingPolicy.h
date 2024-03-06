@@ -62,7 +62,7 @@ struct FWireState
 	float DesiredRopeLength;
 	float LerpedRopeLength;
 	FVector2D DesiredRopeCenterPoint;
-	FRK4SpringInterpolator<FVector2D> SpringCenterPoint;
+	FRK4SpringInterpolator<FVector> SpringCenterPoint;
 	float DesiredSlackMultiplier;
 	FVector2D LastStartPoint;
 	FVector2D LastEndPoint;

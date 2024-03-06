@@ -80,7 +80,7 @@ FWireState::FWireState(FVector2D StartPoint, FVector2D EndPoint, float SpringSti
 	float LengthDelta = LerpedRopeLength - (EndPoint - StartPoint).Size();
 	DesiredRopeCenterPoint = CalculateDesiredCenterPointWithRopeLengthDelta(StartPoint, EndPoint, LengthDelta);
 	SpringCenterPoint.SetSpringConstants(SpringStiffness, SpringDampeningRatio);
-	SpringCenterPoint.Reset(DesiredRopeCenterPoint);
+	SpringCenterPoint.Reset(FVector(DesiredRopeCenterPoint, 0.f));
 }
 
 FVector2D FWireState::CalculateDesiredCenterPointWithRopeLengthDelta(FVector2D StartPoint, FVector2D EndPoint, float RopeLengthDelta)
@@ -138,13 +138,13 @@ FVector2D FWireState::Update(FVector2D StartPoint, FVector2D EndPoint, float Del
 	DesiredRopeCenterPoint = CalculateDesiredCenterPointWithRopeLengthDelta(StartPoint, EndPoint, LengthDelta);
 
 	// Calculate desired center point
-	FVector2D LerpedCenterPoint = SpringCenterPoint.Update(DesiredRopeCenterPoint, DeltaTime);
+	FVector2D LerpedCenterPoint = FVector2D(SpringCenterPoint.Update(FVector(DesiredRopeCenterPoint, 0.f), DeltaTime));
 
-	FVector2D Velocity = SpringCenterPoint.GetVelocity();
+	FVector2D Velocity = FVector2D(SpringCenterPoint.GetVelocity());
 	if (BounceWires && LerpedCenterPoint.Y > DesiredRopeCenterPoint.Y && Velocity.Y > 0.1f)
 	{
 		Velocity.Y = FMath::Abs(Velocity.Y) * -0.9f;
-		SpringCenterPoint.SetVelocity(Velocity);
+		SpringCenterPoint.SetVelocity(FVector(Velocity, 0.f));
 	}
 
 	return LerpedCenterPoint;
