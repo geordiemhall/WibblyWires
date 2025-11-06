@@ -25,7 +25,8 @@ public class WibblyWires : ModuleRules
 			"SlateCore",
 			"GraphEditor",
 			"UnrealEd",
-			"BlueprintGraph"
+			"BlueprintGraph",
+			"DeveloperSettings",
 		});
 
 		DynamicallyLoadedModuleNames.AddRange(new string[] { });

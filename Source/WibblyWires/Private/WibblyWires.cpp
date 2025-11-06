@@ -2,8 +2,12 @@
 
 #include "WibblyWires.h"
 
+#include "BlueprintEditorModule.h"
 #include "EdGraphUtilities.h"
 #include "WibblyConnectionDrawingPolicy.h"
+#include "Framework/Notifications/NotificationManager.h"
+#include "Widgets/Notifications/SNotificationList.h"
+#include "BlueprintEditorModule.h"
 
 #define LOCTEXT_NAMESPACE "FWibblyWiresModule"
 

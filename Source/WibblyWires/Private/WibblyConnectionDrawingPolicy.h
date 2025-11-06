@@ -61,20 +61,20 @@ struct FWireState
 {
 	float DesiredRopeLength;
 	float LerpedRopeLength;
-	FVector2D DesiredRopeCenterPoint;
+	FVector2f DesiredRopeCenterPoint;
 	FRK4SpringInterpolator<FVector> SpringCenterPoint;
 	float DesiredSlackMultiplier;
-	FVector2D LastStartPoint;
-	FVector2D LastEndPoint;
+	FVector2f LastStartPoint;
+	FVector2f LastEndPoint;
 	FLinearColor Color;
 
 	FWireState() = default;
-	FWireState(FVector2D StartPoint, FVector2D EndPoint, float SpringStiffness, float SpringDampeningRatio, float InDesiredSlackMultiplier);
+	FWireState(FVector2f StartPoint, FVector2f EndPoint, float SpringStiffness, float SpringDampeningRatio, float InDesiredSlackMultiplier);
 
-	FVector2D CalculateDesiredCenterPointWithRopeLengthDelta(FVector2D StartPoint, FVector2D EndPoint, float RopeLengthDelta);
-	FVector2D CalculateDesiredCenterPoint(FVector2D StartPoint, FVector2D EndPoint);
-	float CalculateDesiredRopeLength(FVector2D StartPoint, FVector2D EndPoint);
-	FVector2D Update(FVector2D StartPoint, FVector2D EndPoint, float DeltaTime);
+	FVector2f CalculateDesiredCenterPointWithRopeLengthDelta(FVector2f StartPoint, FVector2f EndPoint, float RopeLengthDelta);
+	FVector2f CalculateDesiredCenterPoint(FVector2f StartPoint, FVector2f EndPoint);
+	float CalculateDesiredRopeLength(FVector2f StartPoint, FVector2f EndPoint);
+	FVector2f Update(FVector2f StartPoint, FVector2f EndPoint, float DeltaTime);
 };
 
 struct FGraphState
@@ -109,7 +109,7 @@ public:
 
 	FWibblyConnectionDrawingPolicy(int32 InBackLayerID, int32 InFrontLayerID, float InZoomFactor, const FSlateRect& InClippingRect, FSlateWindowElementList& InDrawElements, UEdGraph* InGraphObj);
 
-	virtual void DrawConnection(int32 LayerId, const FVector2D& Start, const FVector2D& End, const FConnectionParams& Params) override;
+	virtual void DrawConnection(int32 LayerId, const FVector2f& Start, const FVector2f& End, const FConnectionParams& Params) override;
 
 private:
 

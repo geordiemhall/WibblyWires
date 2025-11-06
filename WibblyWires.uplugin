@@ -14,11 +14,12 @@
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
 	"Installed": false,
+	"EnabledByDefault": true,
 	"Modules": [
 		{
 			"Name": "WibblyWires",
-			"Type": "UncookedOnly",
-			"LoadingPhase": "PreDefault"
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "PostEngineInit"
 		}
 	]
 }
